@@ -1,0 +1,114 @@
+{% extends "base.html" %} {% load static %} {% block bodycontent %}
+
+  <main id="main">
+
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>{{personal_data.quote}}</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>{{personal_data.first_name}} {{personal_data.last_name}}</h4>
+              <p><em>{{personal_data.summary}}</em></p>
+              <p>
+              <ul>
+                <li>{{personal_data.address}}</li>
+                <li>{{personal_data.tel}}</li>
+                <li><a href = "mailto: abc@example.com" target="_blank">{{personal_data.email}}</a></li>
+              </ul>
+              </p>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>{{educations.0.grade}}</h4>
+              <h5>{{educations.0.start_date}} - {{educations.0.end_date}}</h5>
+              <p><em>{{educations.0.university_name}}</em></p>
+              <p>{{educations.0.specialization}}</p>
+            </div>
+            <div class="resume-item">
+              <h4>{{educations.1.grade}}</h4>
+              <h5>{{educations.1.start_date}} - {% if educations.1.is_current %} present {% else %} {{educations.1.end_date}} {% endif %}</h5>
+              <p><em>{{educations.1.university_name}}</em></p>
+              <p>{{educations.1.specialization}}</p>
+            </div>
+            <div class="resume-item">
+              <h4>{{educations.2.grade}}</h4>
+              <h5>{{educations.2.start_date}} - {% if educations.2.is_current %} present {% else %} {{educations.2.end_date}} {% endif %}</h5>
+              <p><em>{{educations.2.university_name}}</em></p>
+              <p>{{educations.2.specialization}}</p>
+            </div>
+            </div>
+           <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              
+                <h4>{{experiences.0.job_position}}</h4>
+                <h5>{{experiences.0.start_date}}- {% if experiences.1.is_current %} present {% else %} {{experiences.1.end_date}} {% endif %}</h5>
+                <p><em>{{experiences.0.address}} </em></p>
+              
+              <p>
+                <ul>
+                  <li>Team Leadership: Supervise, train, and motivate cafe staff, including baristas, servers, and kitchen staff. Foster a positive and collaborative work environment that encourages growth and teamwork. </li>
+
+                  <li>Customer Service Excellence: Set and maintain high standards for customer service. Address customer inquiries, concerns, and feedback promptly and professionally. Strive to exceed customer expectations </li>
+                    
+                  <li> Operational Management: Oversee all aspects of daily cafe operations, including opening and closing procedures, inventory management, order placement, and equipment maintenance.  </li>
+                    
+                  <li> Quality Control: Ensure the consistent quality of food, beverages, and presentation. Monitor food safety and hygiene practices to comply with health and safety regulations.  </li>
+                    
+                  <li> Menu Development: Collaborate with the culinary team to create and update menus that reflect seasonal offerings, customer preferences, and dietary trends. </li>
+                    
+                  <li> Financial Management: Monitor and manage budgetary guidelines, track expenses, and optimize cost control measures to achieve profitability targets. </li>
+                    
+                  <li>Marketing and Promotion: Implement marketing strategies to attract and retain customers. Utilize social media, promotions, and events to drive cafe traffic and engagement. </li>
+                    
+                  <li> Vendor Relations: Establish and maintain positive relationships with suppliers, ensuring timely deliveries and favorable terms. </li>
+                    
+                  <li> Staff Scheduling: Create efficient staff schedules to ensure adequate coverage during peak hours while optimizing labor costs. </li>
+                </ul>
+              </p>
+            </div>
+            <div class="resume-item">
+              <h4>{{experiences.1.job_position}}</h4>
+              <h5>{{experiences.1.start_date}} - {{experiences.1.end_date}} </h5>
+              <p><em>{{experiences.1.address}}</em></p>
+              <p>
+              <ul>
+                <li>Curriculum Development: Develop and deliver engaging lesson plans that align with the curriculum standards, focusing on geographic concepts, physical landscapes, human interactions, and environmental issues.</li>
+
+                  <li>  Classroom Instruction: Provide dynamic and interactive classroom instruction that accommodates diverse learning styles and encourages critical thinking and analytical skills.</li>
+                  
+                  <li>  Student Engagement: Create a positive and inclusive classroom environment that promotes active student participation, discussion, and inquiry-based learning.</li>
+                  
+                  <li>Assessment and Feedback: Evaluate student performance through assessments, projects, and examinations. Provide constructive feedback and support for student growth and improvement.</li>
+                  
+                  <li>Technology Integration: Incorporate technology and digital resources to enhance learning experiences and facilitate virtual exploration of geographic concepts.</li>
+                  
+                  <li>  Field Trips and Experiential Learning: Organize and lead field trips, excursions, and outdoor activities that connect classroom learning to real-world geographical contexts.</li>
+                  
+                  <li> Cultural Awareness: Promote an appreciation for cultural diversity by exploring the connections between geography, culture, and society.</li>
+                  
+                  <li> Collaboration: Collaborate with other educators to integrate interdisciplinary concepts and promote a holistic understanding of geography.</li>
+                  
+                  <li> Parent Communication: Maintain open and effective communication with parents or guardians regarding student progress and classroom activities.</li>
+                  
+                  <li> Professional Development: Stay updated on current geographic trends, educational methodologies, and teaching strategies through continuous professional development.</li>
+              </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+{% endblock %}

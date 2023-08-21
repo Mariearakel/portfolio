@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% load static %} {% block bodycontent %}
+
+  <main id="main">
+
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p> Reflection of my journey, a testament to my creativity, and a canvas of my accomplishments. Each piece tells a story, woven together with passion, dedication, and the unwavering pursuit of excellence.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+        
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            {% for pproject in portfolio_projects%}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{pproject.category}}">
+              <div class="portfolio-wrap">
+                <img src="{{pproject.image.url}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>{{pproject.name}}</h4>
+                  <p>{{pproject.short_description}}</p>
+                  <div class="portfolio-links">
+                    <a href="{% url 'portfolio_project' pproject.id %}" ><i class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+{% endblock %}
